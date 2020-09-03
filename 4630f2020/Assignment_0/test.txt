@@ -1,0 +1,10 @@
+
+
+#include iostream.cpp
+
+int main(){
+
+  std::cout << "Hello World" << endl;
+
+  return;
+}
