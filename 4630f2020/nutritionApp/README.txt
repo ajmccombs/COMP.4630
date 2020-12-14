@@ -2,5 +2,5 @@ To run app:
 
 Run gradlew.bat
 
-apk location:
-4630f2020\nutritionApp\app\build\outputs\apk\debug
+run the app apk provided via:
+https://mega.nz/file/gKgnGYgJ#3Xz8NHdY78uz5jVQfcpoNgUMFk6Rbw-yAxtK_wDIntU
