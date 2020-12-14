@@ -1,0 +1,42 @@
+Allan McCombs
+Partner:
+Antony Kellermann
+
+Roles:
+Back-end: Antony Kellerman
+Front-end: Allan McCombs
+
+Back-end:
+Antony implemented the backend to download the zip files and read them into the local DB.
+I had trouble using his download functions, so I had to ultimately just store them locally in the assets
+folder. This allowed me to query the information I needed. I had Antony implement a function to read in
+an input stream, because all his functions took in files. Assests only allows access by functions, and it
+returns an input stream.
+
+For more read his report.
+
+Front-end:
+I wasn't able to finish everything we invisioned. I got most of the UI done, mainly using recycler views
+to show the foods. I was able to queary the DB using the back-end functions, but I couldn't figure out how
+to relay the information from the Search RecyclerView to the Home RecyclerView to show on the Home page where
+everything was. This also means that the progress bars couldn't be updated with the calorie information like
+I wanted. I implemented a way to show the details of the food item, but because we ran low on time, we weren't
+able to implement back-end functions to read the inputstream like we did with the names. So at the moment the
+readMore button just shows the Name of the chosen food to read, but added the details would be trivial given
+that we had more time.
+
+The RecyclerViews gave me a lot of trouble. It was hard to figure out how to have 3 different RecyclerViews on
+the same page (one for breakfast, lunch, and dinner). After implementing this, I couldn't figure out how to
+relay the information back with intent.extra() to the specific RecyclerView that called the SearchActivity.
+I implemented a way to remove the food from the Home RecyclerView, but for some reason when the user removes it,
+the RecyclerView doesn't update it's size, so the height stays the same as if it had a food it in, but it's empty.
+
+We wanted to be able to create Meals so that the user can just add the meal, but again, if I'm not able to implement
+a way to relay the info back to the parent RecylerView, it can't be done. The only way I could make it work is if I
+populate the db class every page and query the food details on every item. This seems like a wrong way to do it.
+I looked up some parceable stuff, but I couldn't really understand out to use it in my application.
+
+Overall this app was a good learning experience. I learned a lot about RecyclerViews and how they show the items.
+When I see an app like YouTube, I wonder how it works on deeper level; like when added videos to a playlist. They
+probably have an external DB that has account info and stores all the stuff and it can just query it with something
+like JQuery or whatever they use. I was struggling a lot, but in the end I am proud of what I created.

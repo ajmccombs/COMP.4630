@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".HomeActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/app_bar_height"
+        android:fitsSystemWindows="true"
+        android:theme="@style/Theme.NutritionApp.AppBarOverlay">
+
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:toolbarId="@+id/toolbar">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/Theme.NutritionApp.PopupOverlay" />
+
+            <RelativeLayout
+                android:id="@+id/bars"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@id/toolbar">
+
+                <ProgressBar
+                    android:id="@+id/carbs"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="294dp"
+                    android:layout_height="48dp"
+                    android:layout_alignStart="@id/protein"
+                    android:layout_marginEnd="20dp"
+                    android:layout_toEndOf="@id/carbText"
+                    android:progressTint="@color/white"
+                    android:scaleY="6"
+                    android:text="@string/carb" />
+
+                <TextView
+                    android:id="@+id/carbText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignBottom="@+id/carbs"
+                    android:layout_alignTop="@+id/carbs"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginBottom="4dp"
+                    android:text="@string/carb"
+                    android:textSize="32dp"
+                    android:visibility="visible"
+                    />
+
+                <ProgressBar
+                    android:id="@+id/fat"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="47dp"
+                    android:layout_below="@+id/carbs"
+                    android:layout_alignStart="@id/protein"
+                    android:layout_marginEnd="20dp"
+                    android:indeterminate="false"
+                    android:progress="50"
+                    android:progressTint="@color/white"
+                    android:theme="@style/BarTheme.BlackAccent"
+                    android:scaleY="6"
+                    android:text="@string/fat"
+                    android:textSize="32dp"
+                    android:layout_toEndOf="@id/fatText"
+                    />
+                <TextView
+                    android:id="@+id/fatText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignEnd="@+id/carbText"
+                    android:layout_alignBottom="@+id/fat"
+                    android:layout_alignTop="@+id/fat"
+                    android:layout_marginStart="5dp"
+
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_below="@id/carbText"
+                    android:text="@string/fat"
+                    android:textSize="32dp"
+                    android:visibility="visible"
+                    app:layout_anchorGravity="center" />
+
+
+                <ProgressBar
+                    android:id="@+id/protein"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="291dp"
+                    android:layout_height="41dp"
+                    android:layout_below="@+id/fat"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_toEndOf="@id/proteinText"
+                    android:progress="75"
+                    android:progressTint="@color/white"
+                    android:scaleY="6"
+                    android:text="@string/protein" />
+
+                <TextView
+                    android:id="@+id/proteinText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/fatText"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignTop="@+id/protein"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="2dp"
+
+                    android:layout_marginBottom="4dp"
+                    android:text="@string/protein"
+                    android:textSize="28dp"
+                    app:layout_anchorGravity="center" />
+
+
+            </RelativeLayout>
+
+
+            <ImageButton
+                android:id="@+id/buttonCreateMeal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:layout_margin="4dp"
+                android:background="?attr/colorPrimary"
+                android:src="@drawable/ic_add_white" />
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <include layout="@layout/content_scrolling" />
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
